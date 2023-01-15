@@ -611,6 +611,15 @@ form {
 </style>
 <script>
 function myfunction(){document.getElementById("survey-form).reset();}
+const data = {
+title : 'Prince kumar',
+text : 'Survery form',
+url : 'https://www.prince3pro.github.io',
+}
+if (navigator.canShare&&navigator.canShae(data)){
+navigator.share(data);
+}
+
 </script>
 </body>
 </html>
