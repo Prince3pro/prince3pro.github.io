@@ -8,7 +8,7 @@
     <title>Survey Form</title>
 </head>
 <body>
-
+<form id="myForm" action="/action_page.php">
 <div class="container">
   <header class="header">
     <h1 id="title" class="text-center">Survey Form</h1>
@@ -41,7 +41,7 @@
     </div>
      <div class="form-group">
      <label id="number-label" for="number">Pincode</label>
-        <input type="number" name="pin" pattern="[0-9]{6}" minlength="5" maxlength="9" class="form-control" placeholder="Pincode" />
+        <input type="number" name="pin" pattern=".{6,}" min="1" max="9" class="form-control" placeholder="Pincode" />
     </div>
        <div class="form-group">
       <p>
@@ -411,14 +411,16 @@
       <textarea id="comments" class="input-textarea" name="comment" placeholder="Enter your comment here..."></textarea>
     </div>
     <div class="form-group">
-      <button type="color" action="https://prince3pro.github.io/" id="color" onclick="myfunction()" class="submit-button">
+      <button type="color" action="https://prince3pro.github.io/" id="color" onclick="myfunction()" oninvaild="alert('You must fill out this form')" class="submit-button">
         Submit<script>
      function myfunction(){alert('Due to Some Reason The Server of Form Is Not Sent To The Developer.I Will Fix The Problem..Thank You for Sharing Your Detailes');}
+     function myfunction(){
+    navigator.vibrate([1000,900,500])}
         </script>
       </button>
        </div>
 </form>
- <marquee behaviour="scroll" direction="left"> <code>Copyright© --Prince-- <u>2022</u></code>
+ <marquee behaviour="scroll" direction="left"> <code>Copyright© --Prince-- <u>© 2010-<?php echo date("Year");?></u></code>
 </marquee>
 <style>
     /* Created by <DD> */
