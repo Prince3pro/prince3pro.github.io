@@ -2,16 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="title" content="Survey Form">
-    <meta name="description" content="Fill this form and chance to win Exicting Prize..">
-    <meta property="og:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRxZpx3buxtBSvFRI10nBhh2s3QIHh-CbknQ&usqp=CAU">
-
-    <meta name="author" content="Prince kumar">
+    <meta name="descriptian" content="aaaa">
+    <meta name="keyword" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Survey Form</title>
 </head>
 <body>
-<form id="myForm" action="/action_page.php">
+<form id="myForm" action="/action_page.php" method="get" target="_blank">
 <div class="container">
   <header class="header">
     <h1 id="title" class="text-center">Survey Form</h1>
@@ -44,7 +41,7 @@
     </div>
      <div class="form-group">
      <label id="number-label" for="number">Pincode</label>
-        <input type="number" name="pin" pattern=".{6,}" min="1" max="9" class="form-control" placeholder="Pincode" />
+        <input type="number" name="pin" pattern="[0-9]{6}" minlength="5" maxlength="9" class="form-control" placeholder="Pincode" />
     </div>
        <div class="form-group">
       <p>
@@ -414,7 +411,7 @@
       <textarea id="comments" class="input-textarea" name="comment" placeholder="Enter your comment here..."></textarea>
     </div>
     <div class="form-group">
-      <button type="color" action="https://prince3pro.github.io/" id="color" onclick="myfunction()" oninvaild="alert('You must fill out this form')" class="submit-button">
+      <button type="color" action="https://prince3pro.github.io/" id="color" onclick="myfunction()" class="submit-button">
         Submit<script>
      function myfunction(){alert('Due to Some Reason The Server of Form Is Not Sent To The Developer.I Will Fix The Problem..Thank You for Sharing Your Detailes');}
      function myfunction(){
@@ -422,8 +419,9 @@
         </script>
       </button>
        </div>
+      
 </form>
- <marquee behaviour="scroll" direction="left"> <code>--Prince--© 2010-2023</code>
+ <marquee behaviour="scroll" direction="left"> <code>Copyright© --Prince-- <u>© 2010-<?php echo date("Year");?></u></code>
 </marquee>
 <style>
     /* Created by <DD> */
@@ -618,8 +616,39 @@ form {
 </style>
 <script>
     var name = prompt("Please enter your sweet name here?"); 
-alert ("Hey Buddy" +name);
+alert ("Hey Buddy "+name);
+
+/*
+ * > Coded by Thomas Hj
+ * > 28.10.2016
+ * > 1.06
+ * 
+ * > #29
+ *
+ *
+ */
+
+
+// Trigger when the web-page is done loading.
+this.onload = function() {
+    (navigator.onLine ? this.ononline() : this.onoffline())
+}
+
+// Trigger when the device is online. 
+// (WiFi, Mobile Network or other)
+this.ononline = function() {
+    a.innerText = 'Online'
+    document.body.setAttribute('e', '0')
+}
+
+// Trigger when the device is offline.
+// (No network)
+this.onoffline = function() {
+    a.innerText = 'Offline'
+    document.body.setAttribute('e', '1')
+}
 
 </script>
+You are now <span id="a"></span>
 </body>
 </html>
