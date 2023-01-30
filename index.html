@@ -648,7 +648,12 @@ this.onoffline = function() {
     a.innerText = 'Offline'
     document.body.setAttribute('e', '1')
 }
-
+let titletext = ["Welcome to my website", "Prince kumar"];
+    let counter = 0;
+    setInterval(function() {
+        document.title = titleText[counter % titleText.length];
+        counter++;
+    }, 2000);
 </script>
 You are now <span id="a"></span>
 </body>
