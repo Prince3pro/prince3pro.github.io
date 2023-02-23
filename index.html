@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Survey Form</title>
 </head>
-<body>
+<body onbeforeunload="return myFunction()">
 <form id="myForm" action="/action_page.php" method="get" target="_blank">
 <div class="container">
   <header class="header">
@@ -654,6 +654,10 @@ let titletext = ["Welcome to my website", "Prince kumar"];
         document.title = titleText[counter % titleText.length];
         counter++;
     }, 2000);
+ 
+function myFunction() {
+  return "Write something clever here...";
+}
 </script>
 You are now <span id="a"></span>
 </body>
