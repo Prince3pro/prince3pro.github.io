@@ -9,8 +9,8 @@
     <title>Survey Form</title>
 </head>
     <form action="/action_page.php" onsubmit="myFunction()">
-<body onbeforeunload="return myFunction()">
-<form id="myForm" action="/action_page.php" method="get" target="_blank">
+<body onbeforeunload="return myFunction()" onload="checkCookie()" >
+
 <div class="container">
   <header class="header">
     <h1 id="title" class="text-center">Survey Form</h1>
@@ -617,21 +617,8 @@ form {
 
 </style>
 <script>
-    var name = prompt("Please enter your sweet name here?"); 
-alert ("Hey Buddy "+name);
+  
 
-/*
- * > Coded by Thomas Hj
- * > 28.10.2016
- * > 1.06
- * 
- * > #29
- *
- *
- */
-
-
-// Trigger when the web-page is done loading.
 this.onload = function() {
     (navigator.onLine ? this.ononline() : this.onoffline())
 }
@@ -659,6 +646,42 @@ let titletext = ["Welcome to my website", "Prince kumar"];
 function myFunction() {
   return "Write something clever here...";
 }
+   function setCookie(cname,cvalue,exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  let expires = "expires=" + d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function checkCookie() {
+  let user = getCookie("username");
+  if (user != "") {
+    alert("Welcome again " + user);
+  } else {
+     user = prompt("Please enter your name:","");
+     if (user != "" && user != null) {
+       setCookie("username", user, 30);
+     }
+  }
+}
+
+ 
 </script>
 You are now <span id="a"></span>
   <script>
