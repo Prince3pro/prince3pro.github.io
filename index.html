@@ -1,458 +1,320 @@
-<!-- Created by Prince kumar -->
+<!-- Created by Lucky Behera -->
 
-<!--Created By Prince-->
+<!-- Created by Lucky -->
+
 <!DOCTYPE html>
-<html ng-app>
-    <head>
-      <title>Prince kumar</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" /> 
-          <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <title>Portfolio</title>
-    </head>
-    <body>
- <div id="portfolio">
-<div class="container">
-    <!-- ##### Navigation -->
-<nav class="navbar">
-<a href="#"><h1 align="right" id="pf">Portfolio</h1></a>
-<ul class="nav navbar-nav" id="Navigation">
-<li><a href="#">Home</a></li>
-<li>
- <a href="#" id="contact">Contact</a> </li>
-<li>
-<a href="#" id="login">Login</a>
-</li>
-<li>
-<a href="#" id="about">About</a> </li>
-</ul>
-</nav>
-</div>
- <div id="topic" >
-     <h4>Hey There!</h5>
-     <h1>I am Prince Kumar</h1>
-     <h3>I am Web Designer & <br> Front-End Developer</h3>
-    <h2>
-<a id="aa" href="https://www.instagram.com/_prince_1743"><i class="fa fa-instagram" ></i> </a>
-<a href="https://t.me/AzizSobirov" >
-<i class="fa fa-telegram"></i></a>
-<a id="aa" href="https://www.youtube.com/channel/UCIRKr0LNFUnUHhWodznlQFA">
-<i class="fa fa-youtube"></i></a>
-<a id="aa" href="https://github.com/Prince3pro">
-<i class="fa fa-github"></i></a>
-    </h2>
- </div>
- 
- <div id="follow">
-     <div id="box1">
-<a id="aa" href="" > <h3><img src="https://sololearn.com/Images/favicon.ico" height="30px" width="30px"><br>Follow Me</h3> </a>      
-     </div>
-     <div id="box2">
-<h3>300+ <br>Followers</h3>       
-     </div>
- </div>
- 
- <!--Nav-->
- <!--Contact-->
- <div id="contactt">
- <h1 id="back" class="qq"><b>
-<i class="fa fa-angle-left"></i>
- </b></h1> <br /><br />
-<h2><i class="fa fa-phone"></i> <br />
-+918002902213 </h2>
-<h2><i class="fa fa-envelope"></i>
-</h2><h5>
-pkumar825412@gmail.com </h5>
-<h2><i class="fa fa-telegram"></i>
-<br>Prince</h2>
-<h2><i class="fa fa-instagram"></i>
-<br>Prince</h2>
-<h2><i class="fa fa-github"></i>
-<br>Prince kumad</h2>
- </div>
-
- <!--Login-->
- <div id="loginn">
- <h1 id="backk" class="qq"><b>
-<i class="fa fa-angle-left"></i>
- </b></h1>
-<center>        <div id="sign1">
-<div id="ww"><h1>Sign Up</h1></div>
-<ul>
-    <li><label>Name:</label></li>
-    <li>
-<i class="fa fa-user" ></i>     
-<input type="text" name="name" ng-model="name" placeholder="Type your Name" required>
-    </li>
- <li><label>Email:</label></li>
-  <li>
-<i class="fa fa-envelope" ></i>     
-<input type="email" name="email" ng-model="email" placeholder="Type your Email" required>
-    </li> 
-       <li><label>Password:</label></li>
-    <li>
-<i class="fa fa-lock" ></i>     
-<input type="password" name="password" placeholder="Type your Password" ng-model="password" maxlength="16" required>
-    </li>    
- <li><label>Birth Day:</label></li>
-    <li>
-<i class="fa fa-calendar" ></i>     
-<input type="date" name="data" placeholder="Enter you Birth Day" required>
-    </li>     
- <li><label>Gender:</label></li>
-    <li>
-<label>Male<input type="radio" name="gender" required></label>
-<label>FeMale
-<input type="radio" name="gender" value="FeMale" required></label>
-    </li>
-
-    <li>
-<input type="submit" id="sign2" name="submit" value="Sign Up">
-       
-    </li>
-    <li><h3>or Sign Up Using</h3></li>
-    <li>
-<h2 style="letter-spacing:10px;"><i class="fa fa-google"></i>        
-<i class="fa fa-instagram"></i>
-<i class="fa fa-github"></i></h2>
-    </li>
-</ul>                 
-        </div>
-        <div id="log1">
-<div id="ww"><h1>Login</h1></div>
-<ul>
-    <li><label>Name:</label></li>
-    <li>
-<i class="fa fa-user" ></i>     
-<input type="text" name="name" placeholder="Type your Name" value="{{name}}" required>
-    </li>
- <li><label>Email:</label></li>
-  <li>
-<i class="fa fa-envelope" ></i>     
-<input type="email" name="email" value="{{email}}" placeholder="Type your Email" required>
-    </li>  
-   <li><label>Password:</label></li>
-    <li>
-<i class="fa fa-lock" ></i>     
-<input type="password" name="password" placeholder="Type your Password" value="{{password}}" maxlength="16" required>
-    </li>    
-    <li>
-<h4 id="res1" align="right">Forgot Password</h4>        
-    </li>
-    <li>
-<input type="submit" id="log2" name="submit" value="Login">       
-    </li>
-    <li><h3>or Login Using</h3></li>
-    <li>
-<h2 style="letter-spacing:10px;"><i class="fa fa-google"></i>        
-<i class="fa fa-instagram"></i>
-<i class="fa fa-github"></i></h2>
-    </li>
-</ul>                
-        </div>
-        <div id="res">
-<div id="ww"><h1 onclick="alert('Enter your Email we will send your password to your email.')">Forgot Password</h1>
-   </div>  
+<html>
+<head>
+    <title>profile card</title>
+    <link href="https://www.instagram.com/prince.825412" rel="stylesheet">
+</head>
+<body>
+<canvas id="c"></canvas>
+<div id="con">
+  <div class="nam">Prince</div>
+  <div class="nam sum"><i>105 followers • 15 following</i><i style="color:transparent;">1</i></div>
+  <a href="https://www.instagram.com/prince.825412"><div class="fol">FOLLOW</div></a>
   
-<ul> 
-<li><label>Email:</label></li>
- <li>
-<i class="fa fa-envelope" ></i>     
-<input type="email" name="email"  placeholder="Type your Email." required>
-    </li> 
-   <li><label>Password:</label></li>
-  <li>
-<i class="fa fa-lock" ></i>     
-<input type="email" name="email" placeholder="Type your Password" required>
-    </li>  
-    <li>
-  <input type="submit" id="res2" name="submit" value="Login"> 
-    </li> 
-      </ul>         
-        </div>
-<div id="prof">
-<div id="ww"><h1>Profile</h1></div>
-<ul><li>
- <h2><i class="fa fa-user"></i>
-    <br>{{name}}  </h2></li><li>
- <h3><i class="fa fa-envelope"></i>
-      <br>{{email}}  </h3></li><li>
- <h2><i class="fa fa-lock"></i>
-      <br>{{password}} </h2></li></ul>
-  
+  <a href="https://www.instagram.com/prince.825412"><div class="fol mes">MESSAGE</div></a>
+      <div class="b d2">7000 XP • Level 19</div>
+      <div class="b d1">53 code bits</div>
+      <div class="b d3">#65 in INDIA</div>
+<div class="fol sk"><i>Skills</i></div>
+  <img class="ic" src="https://www.dropbox.com/s/1nw93840eumx9ej/1014.png?dl=0&raw=1">
+  <img class="ic i1" src="https://www.dropbox.com/s/yx80poeug55euxp/1023.png?dl=0&raw=1">
+  <img class="ic i2" src="https://www.dropbox.com/s/ye6zvsnr7hu5ya6/1024.png?dl=0&raw=1">
+  <img class="ic i3" src="https://www.dropbox.com/s/q7disuxs07klvus/1073.png?dl=0&raw=1">
+</div>  
+<div class="b">
+<img id="i" src= "https://www.sololearn.com/Icons/Avatars/17648070.jpg">
 </div>
-        </center>
- </div>
- <!--About-->
- <div id="aboutt">
- <h1 id="backkk" class="qq"><b>
-<i class="fa fa-angle-left"></i>
-</b></h1> 
-<center><div id="profile-image" >
-    <img src="https://photos.google.com/share/AF1QipNNqnCpDszg3UVftq27v5VVz7UTRco8vNLaK8v3Whgy-0CjoXhipy4KT7EtCpG48Q/photo/AF1QipPy-Z85tw_qDQLeF95z4XGaigrg8u5W2fKMVBR1?key=U2s5ZHR1M09MMGhKVXBQcUZnTEVId0xRcFFxVnZn" alt="picture">
-</div></center>
-<h2><i class="fa fa-user"></i><br>
- Prince Kumar  </h2>
-<h2><i class="fa fa-map-marker"></i>
-<br> India</h2>
-<h2><i class="fa fa-book"></i><br>
-Front-End Developer<br> &   <br>
-Web Designer</h2>
- </div>
- </div>    
-    </body>
-    <style>
-        /* Created by AZIZ SOBIROV */
+<span class="ps p1">+</span>
+<span class="ps p2">+</span>
+<span class="ps p3">+</span>
+<span class="ps p4">+</span>
+<span class="ps p5">+</span>
+<span class="ps p6">+</span>
+<div id="lod">Please Wait..</div>
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box ;
+<script>
+"use strict"
+var Mnx=(n,x)=>{return Math.random()*(x-n)+n},W,H,san,ar=[];
+class Circle {
+constructor(x,y,r,c,v,e){
+this.x=x;
+this.y=y;
+this.r=r;
+this.c=255;
+this.v=v;
+this.e=e;
+this.a=.6;
 }
-body {
-    display:flex;
-    min-height:100vh;
-    align-items:center;
-    justify-content:center;    background:linear-gradient(-55deg,#00bb99 45%,#fff 10%);
+draw(){this.sn+=.3
+       this.y-=this.v;
+       this.y<this.e?this.a-=.01:'';
+       san.beginPath();
+       san.arc(this.x,this.y,this.r,0,44/7,false);
+       san.fillStyle=`rgba(${this.c},215,0,${this.a})`;
+       san.fill()
+       san.closePath();
 }
-aa{
-    color:black;
-    text-decoration:none;
-}
-#topic{
-    height:auto ;
-    padding:20px;
-    width:auto ;
-    color:#fff;
-    background:rgba(0,0,0,.8);
-    box-shadow:
-    inset 0 10px 0 0 #00ddff,
-    inset 0 -10px 0 0 #00ddff
-    ;
-    z-index:2;
-}
-#topic i:hover{color:#00bb99;}
-#topic h2{
-    text-align:center ;
-    letter-spacing:10px;
-    color:#fff;
-}
-#topic h3,h4{
-    position:relative ;
-    left:-4%;
-    color:#00bb99;
-    font-variant:small-caps ;
-}
-.container {
-    position:fixed ;
-    top:0;
-}
-.container ul{
-    display:flex;
-    font-weight:bold;
-    font-size:20px;
-    font-variant:small-caps ;
+static push(n){var rad=Mnx(2,4),cx=Mnx(rad,W-rad),cy=n?Mnx(H+rad,H+rad+100):Mnx(H*1.2,H*.3),cl=Mnx(0,250),vl=Mnx(.5,1.5),en=Mnx(H*8,H*.2);
+return new Circle(cx,cy,rad,cl,vl,en)}
 }
 
-.container li:hover{
-    box-shadow:0 -5px 0 0 black;
+const Loop=()=>{
+    san.clearRect(0,0,W,H);    
+    ar.forEach((v,i)=>{
+        v.draw();   
+        if(v.a<0) ar[i]=Circle.push(true)
+    })
+    requestAnimationFrame(Loop);    
 }
-.container li:nth-child(1){
-    background:#dddddf;
-    box-shadow:0 -5px 0 0 black;
-}
-.qq{
-    position:absolute ;
-    margin:0;
-    padding:0;
-    top:10px;
-    left:10px;
-    width:40px;
-    background:#fff;
-    color:#000;
-    height:40px;
-    border-radius:50px;
-    text-align:center ;
-    box-sizing:border-box ;
-}
-/*Nav*/
-#contactt,#aboutt{color:white;}
-#contactt,#loginn,#aboutt{
-    position:absolute ;
-    padding:20px;
-    top:0;
-    left:0;
-    height:100%;
-    width:100%;
-    text-align:center ;
-    display:none;
-    background:rgba(0,0,0,.8);
-}
-#profile-image{
-    height:200px;
-    width:200px;
-    border-radius:100%;
-    background-color:white;
-    overflow:hidden ;
-}
-#profile-image img{
-    position:relative  ;
-    top:0;
-    left:0;
-    height:220px;
-    width:220px;
-}
-#follow{
-    position:absolute ;
-    bottom:0;
-    left:0;
-    text-align:center ;
-    color:#fff;
-    width:100%;
-    padding:10px;
-    display:flex;
-}
-#follow #box1,#box2{
-    height:100px;
-    margin:10px;
-    width:150px;
-    padding:0;
-    box-shadow:
-    inset 10px 0 0 0 #00ddff,
-    inset -10px 0 0 0 #00ddff ;
-    background:rgba(0,0,0,.8);
+const init=()=>{
+    document.body.style.margin=0;
+    let c=document.getElementById("c");
+    c.style.position="fixed"
+    c.style.background="black"
+    c.style.width="100vw",c.style.height="100vh";
+    H=innerHeight*2,W=innerWidth*2;
+    c.height=H,c.width=W;
+    san=c.getContext('2d');
+    //  Increse canvas DPI
+    let dh=+getComputedStyle(c).height.slice(0,-2);
+    let dw=+getComputedStyle(c).width.slice(0,-2);
+    c.setAttribute('height',dh*2);
+    c.setAttribute('width',dw*2);   
+   for(var i=0;i<300;i++){
+        ar.push(Circle.push(false))
+    }
+    Loop();
+    lod.innerHTML="<h2>tap to continue...<h2>"
+    lod.onclick=()=>{ 
+        
+        lod.style.display="none"
+    }
     
+};
+onload=init;    
+</script>
+<style>
+    /* Created by Lucky Behera */
+
+/* Created by SAN */
+
+
+body{background:white;font-family: 'Varela Round', sans-serif;}
+.b{
+    width:15vh; 
+    height:15vh; 
+    position:absolute;
+    top:calc(15vh - 7.5vh);
+    left:calc(50vw - 7.5vh);
+    border-radius:54% 46% 42% 58%/60% 58% 42% 40%; 
+    background:gold; 
+    -webkit-animation:wave 8s linear infinite; 
+    font-size:10px;
+    font-weight:900;
+} 
+
+@keyframes wave { 
+    20%{border-radius:45% 55% 62% 38%/53% 51% 49% 47%} 
+    40%{border-radius:45% 55% 49% 51%/36% 51% 49% 64%} 
+    60%{border-radius:60% 40% 57% 43%/47% 62% 38% 53%} 
+    80%{border-radius:60% 40% 32% 68%/38% 36% 64% 62%}
 }
 
-#sign1,#log1,#res,#prof{
-    position:absolute ;
-    top:50px;
-    left:30px;
-    height:550px;
-    width:300px;
-    background:#fff;
-    border-radius:15px;
-    overflow:hidden ;
+#i{
+    width:100% ; 
+    height:100%; 
+    background:red;
+    border-radius:50%;    
+    -webkit-transform:scale(.91);
 }
-#loginn ul{
-    position:relative ;
-    top:25%;
-    margin:3px;
-    text-align:center ;
-    font-weight:bold;
-    list-style:none;    
+#con{
+    width:45vh;
+    height:70vh;
+    position:fixed;
+    left:calc(50vw - 22.5vh);
+    top:15vh;
+    background:rgba(300,300,300,.2);
+    border-radius:10vw;
+    backdrop-filter: blur(1.5px);
+    border:3px solid gold;
 }
-input{
-    background:#fff;
-    border:3px solid white;
-    border-bottom-color:black;
-    outline:none;
+.ps{
+    color:gold;
+    position:fixed;
+    -webkit-animation:s1 3s linear 0s infinite;
+        
 }
-#loginn i:hover{color:#00bb99;}
-input:focus::placeholder{
-    transition-duration:2s;
-    transform:translateX(-200px);
+.p1{
+    top:calc(15vh - 40px);
+    left:calc(50vw + 50px);
+    font-size:7px;
+    -webkit-animation-delay:0s;
 }
-input[type="submit"]{
-    margin:5px;
-    height:30px;
-    width:180px;
-    border-radius:10px;
-    border:4px solid black;
-    background:#00bb99;
-    color:white;
+.p2{
+    top:calc(15vh + 30px);
+    left:calc(50vw + 65px);
+    font-size:9px;
+    -webkit-animation-delay:1.2s;
 }
-#sign1{ z-index:1;}
-#log1{z-index:-1;}
-#res{z-index:-1;}
-#prof{z-index:-1;}
-#ww{
-    position:absolute  ;
-    top:-28%;
-    height:300px;
-    width:300px;
-    border-radius:100%;
-    background:#00bb99;
-    text-align:center ;
+.p3{
+    top:calc(15vh - 10px);
+    left:calc(50vw + 55px);
+    font-size:10px;
+    -webkit-animation-delay:.6s;
 }
-#ww h1{
-    position:relative  ;
-    top:55%;
-    color:#fff;
-    font-size:38px;
-    font-variant:small-caps ;
+.p4{
+    top:calc(15vh + 60px);
+    left:calc(50vw + 0px);
+    font-size:12px;
+    -webkit-animation-delay:1s;
 }
-#prof 
-    </style>
-    <script>
-        // Created by AZIZ SOBIROV
+.p5{
+    top:calc(15vh + 30px);
+    left:calc(50vw - 60px);
+    font-size:7px;
+    -webkit-animation-delay:2s;
+}
+.p6{
+    top:calc(15vh - 50px);
+    left:calc(50vw - 65px);
+    font-size:8px;
+    -webkit-animation-delay:.8s;
+}
+@keyframes s1 {
+    50%{color:transparent;}
+    100%{color:gold;}
+}
+.fol{
+    height:5vh;
+    width:15vh;
+    background:gold;
+    border-radius:100vw;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    position:absolute;
+    top:20vh;left:5vh;
+    font-size:13px;
+    font-weight:900;
+    padding-top:.3vh;
+    color:black;
+}
+.mes{
+    left:25vh;
+}
+.nam{
+    width:100%;
+    text-align:center;
+    font-size:2vh; 
+    position:absolute; 
+    top:11vh;
+    color:gold;      
+}
+.sum{
+    top:15vh;
+}
+ul{
+    color:gold;
+    position:relative;
+    top:30vh;
+}
+.ic{
+    height:5vh;
+    width:5vh;
+    position:absolute;
+    bottom:5vh;
+    left:5vh;
+    border-radius:50%;   
+    border:.3vh solid gold; 
+}
+.i1{
+    left:15vh;
+}
+.i2{
+    left:25vh;
+}
+.i3{
+    left:35vh;
+}
+.sk{
+    top:50vh;
+    left:12.5vh;
+    height:4vh;
+    width:20vh;
+    -webkit-transform:skew(15deg);
+    border-radius:1vh;
+}
+.det{
+    height:4vh;
+    width:35vh;
+    background:gold;
+    -webkit-transform:skew(-10deg) rotate(-10deg);
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    position:absolute;
+    top:30vh;left:5vh;
+    font-size:13px;
+    font-weight:900;
+    padding-top:.3vh;
+}
+.d1{
+    height:4vh;
+    width:35vh;
+    top:30vh;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    left:5vh;
+    -webkit-animation-delay:1s;
+}
+.d2{
+    height:4vh;
+    width:35vh;
+    top:35vh;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    left:5vh;
+     -webkit-animation-delay:2s;
+}
+.d3{
+    height:4vh;
+    width:35vh;
+    top:40vh;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    left:5vh;
+     -webkit-animation-delay:3s;
+}
 
-alert ("If you like this code please upvote and write a comment.")
-             $(function() {
- $("#contact").click(function() {
- $("#contactt").slideToggle(700);
- $("#contactt").css("display","block");
-    });
-});
+#lod{
+    height:100vh;
+    width:100vw;
+    background:rgba(0,0,0,0.9);
+    display: flex; 
+    align-items: center; 
+    text-align:center;
+    justify-content: center;
+    position:fixed;
+    top:0;left:0;
+    font-size:8vw;
+    font-weight:900;
+    -webkit-animation:s1 1.5s linear 0s infinite;
+    color:gold;
+}
+@keyframes fad { 
+    50%{color:transparent;}
+    100%{color:gold;}    
+}
+a{text-decoration:none;}
 
-$(function() {
- $("#login").click(function() {
- $("#loginn").slideToggle(700);
- $("#loginn").css("display","block");
-    });
-});
-
-$(function() {
- $("#about").click(function() {
- $("#aboutt").slideToggle(700);
- $("#aboutt").css("display","block");
-    });
-});
-$(function() {
- $("#back").click(function() {
- $("#contactt").css("display","none");
-    });
-});
-$(function() {
- $("#backkk").click(function() {
- $("#aboutt").css("display","none");
-    });
-});
-$(function() {
- $("#backk").click(function() {
- $("#loginn").css("display","none");
-    });
-});
-
-
-
-$(function() {
-    $("#sign2").click(function() {
-    $("#log1").css("z-index","2");
-    });
-});
-
-$(function() {
-    $("#res1").click(function() {
-    $("#res").css("z-index","3");
-    });
-});
-
-$(function() {
-    $("#res2").click(function() {
-    $("#log1").css("z-index","4");
-    });
-});
-
-$(function() {
-    $("#log2").click(function() {
-    $("#prof").css("z-index","5");
-    });
-});
-
-    </script>
+    
+</style>
+    </body>
 </html>
