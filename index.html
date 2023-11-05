@@ -1,14 +1,20 @@
+<!-- Created by Dev Nasfam -->
 
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
+    <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta name="description" content="A powerful Chatbot Assistant: Get answers, solutions, and engage in meaningful conversations. Ai bot">
     <meta name="keywords" content="chatbot, AI, answers, solutions, conversations, chatGPT">
-    <meta name="author" content="Prince Kumar">
-    <!-- Add your OpenAI meta tags here if required -->
-
+    <meta name="author" content="Prince kumar">
+    <meta name="robots" content="index, like, share">
+    <meta name="og:title" property="og:title" content="ChatGPT Clone">
+    <meta name="og:description" property="og:description" content="A powerful Chatbot Assistant: Get answers, openai, and Ai bot.">
+    <meta name="og:image" property="og:image" content="https://i.postimg.cc/Ghx2gHH8/20231005-171724.png">
+    <meta name="og:url" property="og:url" content="https://prince3pro.github.io/">
+    <meta name="og:type" property="og:type" content="website">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <script src="https://kit.fontawesome.com/d3c9fc67a3.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/solid.css">
@@ -16,118 +22,283 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <script src="app.js"></script>
-    <title>ChatGPT BY Prince3pro</title>
-</head>
-<body>
-<main>
-    <div class="topper">
+        <title>ChatGPT BY Prince3pro</title>
+    </head>
+    <body>
+    <main>
+     <div class="topper">
         <div class="icon"></div>
         <div class="name">ChatGPT <h4>BY PRINCE</h4></div>
-    </div>
-    <div class="msgs_cont">
-        <ul id="list_cont">
-            <li class="rchat">Hello! How can I assist you today?</li>
-        </ul>
-    </div>
-    <div class="bottom">
+     </div>
+     <div class="msgs_cont">
+       <ul id="list_cont"> 
+       <li class="rchat">Hello! How can i assist you today?
+       </li>
+       </ul>
+     </div>
+     <div class="bottom">
         <div id="input">
-            <input type="text" id="txt" placeholder="Send a message">
-            <button class="uil uil-message" id="send-button"></button>
+        <input type="text" id="txt" placeholder="Send a message">
+        <button class="uil uil-message"></button>
         </div>
-    </div>
-</main>
-</body>
-<style>
-    <!-- Your CSS styles remain the same -->
-</style>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        let bottom = document.querySelector(".bottom");
-        let input = document.querySelector("#txt");
-        let sendbtn = document.querySelector("#send-button");
-        let ul = document.querySelector("#list_cont");
+     </div>
+    </main>
+    <style>
+        /* Created by Dev Nasfam */
 
-        bottom.addEventListener("click", () => {
-            input.focus();
-        });
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+}
+body{
+    overflow:none;
+}
+main {
+  width: 100vw;
+  height: 100%;
+  position:absolute;
+  background: linear-gradient(109.6deg, rgba(0, 0, 0, 0.93) 11.2%, rgb(63, 61, 61) 78.9%);
+  overflow: hidden;
+}
+main .topper {
+  width: 100%;
+  height: auto;
+  background: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
+  padding: 10px;
+  position: sticky;
+  z-index:1;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+main .topper .icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #11ba91 url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaAlXAmdUfKKH-7QZ2yihil_GReFnwJmtB-w&usqp=CAU);
+  background-size: cover;
+  margin-left: 15px;
+}
+main .topper .name {
+  color: #fff;
+  font-weight: bolder;
+  margin-left: 15px;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+main .bottom {
+  width: 100%;
+  height: auto;
+  background: #595656;
+  position:fixed;
+  z-index:1;
+  bottom: 0;
+  right: 0;
+  padding: 10px;
+  padding-bottom: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main .bottom #input {
+  width: 95%;
+  height: auto;
+  background: grey;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+}
+main .bottom #input input {
+  width: 90%;
+  padding: 7px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #fff;
+  font-size: 16px;
+}
+main .bottom #input input::placeholder {
+  color: #e6e6e6;
+}
+main .bottom #input button {
+  padding: 5px 10px;
+  margin: 0 5px;
+  font-size: 20px;
+  /* background:darken(#ccc,45%);*/
+  border-radius: 10px;
+  color: #fff;
+  transition: 0.2s;
+  outline: none;
+  border: none;
+  background: transparent;
+}
+main .bottom #input button:active {
+  scale: 0.96;
+  background: #13d2a3;
+  opacity: 0.4;
+}
+main .bottom::after {
+  content: "made by @prince3pro Chatgpt Can be made mistake";
+  position: absolute;
+  width: 100%;
+  bottom: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: #b3b3b3;
+}
+main .msgs_cont {
+  width: 100%;
+  height: calc(100vh - 155px);
+  overflow: auto;
+  padding: 10px;
+  padding-bottom: 15px;
+  scroll-behavior: smooth;
+}
+main .msgs_cont ul {
+  width: 100%;
+  padding: 5px;
+}
+main .msgs_cont li {
+  padding: 10px;
+  max-width: 70%;
+  margin: 10px 0;
+  background: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
+  color: #fff;
+  list-style-type: none;
+  border-radius: 10px;
+  color: #f2f2f2;
+  word-wrap: break-word;
+  overflow: hidden;
+  position:relative;
+}
+main .msgs_cont .schat {
+  float: right;
+  clear: both;
+  margin-bottom: 5px;
+  border-bottom-right-radius:20px;
+}
+main .msgs_cont .rchat {
+  float: left;
+  clear: both;
+  margin-bottom: 5px;
+  background: linear-gradient(to top right, #11ba91, #0A6E55);
+  padding-left: 12px;
+  border-bottom-left-radius:20px;
+}
 
-        input.addEventListener("input", () => {
-            if (input.value.length > 0) {
-                sendbtn.style.background = "#11ba91";
-            } else {
-                sendbtn.style.background = "transparent";
-            }
-        });
+.typing-animation {
+  display: inline-block;
+}
 
-        function ChatGPT() {
-            if (input.value !== "" && input.value !== null && input.value.length > 0 && input.value.trim() !== "") {
-                sendbtn.style.background = "transparent";
+.dot {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  background: #cccccc;
+  border-radius: 50%;
+  margin-right: 5px;
+  opacity: 0;
+  animation: typing-dot 1s infinite;
+}
 
-                // Display typing animation
-                let typingAnimationDiv = document.createElement("div");
-                typingAnimationDiv.className = "typing-animation";
-                for (var i = 0; i < 3; i++) {
-                    var dotSpan = document.createElement("span");
-                    dotSpan.className = "dot";
-                    typingAnimationDiv.appendChild(dotSpan);
-                }
-                let li2 = document.createElement("li");
-                li2.className = "rchat";
-                li2.appendChild(typingAnimationDiv);
+.dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
 
-                let li = document.createElement("li");
-                li.className = "schat";
-                li.textContent = input.value;
-                ul.appendChild(li);
+.dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
 
-                // Simulate the chatbot response
-                setTimeout(() => {
-                    ul.appendChild(li2);
-                    $(".msgs_cont").scrollTop($(".msgs_cont")[0].scrollHeight);
-                }, 500);
-                sendbtn.disabled = true;
-                $(".msgs_cont").scrollTop($(".msgs_cont")[0].scrollHeight);
+@keyframes typing-dot {
+  0%, 20% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-7px);
+  }
+  80%, 100% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+}
+    </style>
+    </body>
+    
+    <script>
+        
 
-                // Call the OpenAI API here
-                fetch('https://api.openai.com/v1/engines/davinci-codex/completions', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': 'Bearer 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', // Replace with your OpenAI API key
-                    },
-                    body: JSON.stringify({
-                        prompt: input.value,
-                        max_tokens: 50,
-                    })
-                })
-                    .then(response => response.json())
-                    .then(data => {
-                        // Handle the API response here and update the chat interface
-                        // For example:
-                        const aiResponse = data.choices[0].text;
-                        displayAIResponse(aiResponse);
-                        sendbtn.disabled = false;
-                    })
-                    .catch(error => {
-                        // Handle API call errors here
-                        li2.textContent = "API Error";
-                        ul.appendChild(li2);
-                        $(".msgs_cont").scrollTop($(".msgs_cont")[0].scrollHeight);
-                        sendbtn.disabled = false;
-                    });
-            }
-            input.value = "";
-        }
-
-        sendbtn.addEventListener("click", ChatGPT);
-
-        function displayAIResponse(response) {
-            let li = document.createElement("li");
-            li.className = "rchat";
-            li.textContent = response;
-            ul.appendChild(li);
-            $(".msgs_cont").scrollTop($(".msgs_cont")[0].scrollHeight);
-        }
+document.addEventListener("DOMContentLoaded", function() {
+let bottom = document.querySelector(".bottom");
+   let input = document.querySelector("#txt");
+   let sendbtn = document.querySelector(".uil-message");
+   let ul = document.querySelector("#list_cont");
+    bottom.addEventListener("click",()=>{
+        input.focus();
     });
-</script>
+    input.addEventListener("input",()=>{
+      if(input.value.length>0){
+      sendbtn.style.background="#11ba91";
+      }else{
+      sendbtn.style.background="transparent";
+      }
+    });
+   function ChatGPT(){
+       if(input.value!=="" && input.value!==null && input.value.length>0 && input.value.trim()!==""){
+sendbtn.style.background="transparent";       
+let typingAnimationDiv = document.createElement("div");
+typingAnimationDiv.className = "typing-animation";
+for (var i = 0; i < 3; i++) {
+    var dotSpan = document.createElement("span");
+    dotSpan.className = "dot";
+  typingAnimationDiv.appendChild(dotSpan);
+}
+        let li2 = document.createElement("li");
+        li2.className="rchat";
+       li2.appendChild(typingAnimationDiv);
+        let li = document.createElement("li");
+        li.className="schat";
+        li.textContent=input.value;
+         ul.appendChild(li);
+         setTimeout(()=>{
+            ul.appendChild(li2);
+            $(".msgs_cont").scrollTop($(".msgs_cont")[0].scrollHeight);
+         },500);
+         sendbtn.disabled=true;
+      $(".msgs_cont").scrollTop($(".msgs_cont")[0].scrollHeight); 
+      fetch(`https://WellinformedHeavyBootstrapping.yasirmecom.repl.co/ask?question=users new question :, ${input.value}`)
+      .then(res => res.text())
+        .then(data => {
+        let i = 0;
+const intervalId = setInterval(() => {
+    if(i < data.length){
+        li2.textContent += data[i];
+        $(".msgs_cont").scrollTop($(".msgs_cont")[0].scrollHeight);
+        i++;
+    }else{
+        clearInterval(intervalId);
+        sendbtn.disabled=false;
+    }
+}, 20);
+        }).catch(error=>{
+            li2.textContent=`Not working`;
+         ul.appendChild(li2);
+         $(".msgs_cont").scrollTop($(".msgs_cont")[0].scrollHeight);
+        });
+   }
+   input.value="";
+   }
+  sendbtn.addEventListener("click",ChatGPT);
+});
+    </script>
 </html>
