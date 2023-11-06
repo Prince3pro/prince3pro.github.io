@@ -276,8 +276,18 @@ for (var i = 0; i < 3; i++) {
          },500);
          sendbtn.disabled=true;
       $(".msgs_cont").scrollTop($(".msgs_cont")[0].scrollHeight); 
-      fetch(`https://WellinformedHeavyBootstrapping.yasirmecom.repl.co/ask?question=users new question :, ${input.value}`)
-      .then(res => res.text())
+      fetch('https://api.openai.com/v1/chat/completions', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer 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', 
+    },
+    body: JSON.stringify({
+        prompt: input.value,
+        max_tokens: 50,
+    })
+})
+
         .then(data => {
         let i = 0;
 const intervalId = setInterval(() => {
