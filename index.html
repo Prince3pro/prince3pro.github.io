@@ -1,206 +1,822 @@
+<!-- Created by Amardeep kesharwani -->
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="amardeep kesharwani">
-    <title>Invoicing | React App</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        .container { width: 100%; max-width: 800px; margin: auto; }
-        .form-group { margin-bottom: 15px; }
-        .form-group label { display: block; margin-bottom: 5px; }
-        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 8px; box-sizing: border-box; }
-        .btn { background-color: #4CAF50; color: white; border: none; padding: 10px 15px; cursor: pointer; }
-        .btn:hover { background-color: #45a049; }
-        .error { color: red; }
-        .row { display: flex; flex-wrap: wrap; }
-        .w50 { width: 50%; padding: 10px; }
-        .w100 { width: 100%; }
-        .center { text-align: center; }
-        .top-title { margin-bottom: 20px; }
-        .bbn { border-bottom: 1px solid #ccc; }
-    </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="author" content="amardeep kesharwani"/>
+<title>Invoicing | React App</title>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
+ 
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
+ 
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
+ <style>
+ /*************************
+     amardeep kesharwani
+ ***************************/
+ *{
+ margin:0;
+ padding:0;
+ box-sizing:border-box;
+ }
+ body {
+ font-family:sans-serif;
+ font-weight:400;
+ line-height:1.2;
+ font-size:16px;
+ color:#3d3d3d;
+ }
+ a,a:hover {
+ text-decoration:none;
+ }
+ .container {
+ width:100%;
+ padding:0 5%;
+ }
+ .row{
+ display:flex;
+ flex-wrap:wrap;
+ width:100%;
+ }
+ 
+ .center{
+ text-align:center;
+ }
+ .title {
+ margin:40px 0 40px;
+ }
+ .title h1{
+ color:#fa3c3c;
+ margin-bottom:5px;
+ }
+ .title p{
+ font-weight:bold;
+ margin:5px 0;
+ }
+ .w100{
+ width:100%;
+ }
+ .w50{
+ width:100%;
+ }
+ .w25{
+ width:25%;
+ }
+ .w30{
+ width:30%;
+ }
+ 
+ .w20{
+ width:20%;
+ }
+ .w8{
+ width:8%;
+ }
+ .w6{
+ width:6%;
+ }
+ .row > div{
+ border:1px solid #333;
+ }
+ .nb div{
+ border:0px;
+ border-bottom:1px solid #333;
+ }
+ 
+ .bl{
+ border-right:1px solid #333! important;
+ }
+ .bbn{
+ border-bottom:0px!important;
+ }
+ .p5{
+ padding:5px;
+ }
+ .p8{
+ padding:8px;
+ }
+ .h100 div{
+ min-height:200px;
+ }
+ .m5{
+ margin-top:5px;
+ }
+ .sin {
+ font-family:cursive;
+ margin:3px 0;
+ transform:rotate(-5deg) translateY(12px);
+ }
+ .right{
+ text-align:right;
+ }
+ .f14{
+ font-size:14px!important;
+ } 
+ .dn{
+ display:none;
+ }
+ form{
+ width:100%;
+ }
+ .form-group{
+ margin-bottom:20px;
+ }
+ .form-group label {
+ display:block;
+ margin:10px 0;
+ font-size:15px;
+ color:#555;
+ text-transform:uppercase;
+ }
+ .form-group input ,
+ .form-group select,
+ .form-group textarea {
+ display:block;
+ width:100%;
+ outline:none;
+ border:none;
+ background:#fff;
+ padding:10px 20px;
+ box-shadow:0 0 3px rgba(0,0,0,0.2);
+ }
+ textarea {
+ resize:none;
+ height:70px;
+ font-family:sans-serif;
+ }
+ .error{
+  display: block;
+ color:#f00;
+ font-size:14px;
+ font-weight:bold;
+ letter-spacing:1px;
+ margin:5px 0 15px;
+ }
+ .btn{
+ display:inline-block;
+ padding: 10px 20px;
+ background:#000;
+ color:#fff;
+ outline:none;
+ border:none;
+ border-radius:4px;
+ margin-right:20px;
+ font-size:16px;
+ letter-spacing:1px;
+ }
+ .print{
+  display:inline-block;
+  position:absolute;
+  top:0;
+  right:0;
+  outline:none;
+  border:none;
+  padding:8px 16px;
+  background:#fa3c3c;
+  color:#fff;
+  z-index:5;
+  cursor:pointer;
+ }
+ .top-title{
+ padding-bottom:30px;
+ margin-bottom:40px;
+ border-bottom:1px solid #999;
+ }
+ .mw-1000{
+ max-width:1000px;
+ margin:auto;
+ margin-bottom:50px;
+ }
+ .my{
+ margin:30px 0 ;
+ margin-right:20px;
+ }
+ .info{
+ font-weight:bold;
+ font-size:12px;
+ display:block;
+ margin:8px 0;
+ text-transform:uppercase;
+ letter-spacing:1px;
+ }
+ .preloader {
+ position:fixed;
+ top:0;
+ left:0;
+ height:100vh;
+ width:100%;
+ display:flex;
+ justify-content: center;
+ align-items: center;
+ background:rgba(254,255,255,0.6);
+ z-index:9;
+ }
+ .preloader svg{
+ position:relative;
+ height:70px;
+ width:70px;
+ animation: rotate 2s linear infinite;
+ }
+ .preloader svg circle{
+ width:100%;
+ height:100%;
+ fill:none;
+ stroke-width:5px;
+ stroke:#fa3c3c;
+ stroke-linecap: round;
+ transform:translate(5px, 5px);
+ stroke-dasharray:200;
+ stroke-dashoffset:200;
+ animation:rotated 4s linear infinite;
+ }
+ @keyframes rotate{
+ 0%{
+ transform:rotate(0deg);
+ }
+ 100%{
+ transform:rotate(360deg);
+ }
+ }
+ @keyframes rotated{
+ 0%,100%{
+ stroke-dashoffset:200;
+ }
+ 50%{
+ stroke-dashoffset:0;
+ }
+ 50.1%{
+ stroke-dashoffset:400;
+ }
+ }
+ @media print and (max-width:2000px){
+  .print,
+  .title,
+  .info,
+  .btn{
+   display:none;
+  }
+ }
+ @media screen and (max-width:520px){
+  .row{
+   font-size:8px;
+  }
+ }
+ @media screen and (max-width:720px){
+  .row{
+   font-size:12px;
+  }
+ }
+ </style>   
 </head>
 <body>
-    <div id="root"></div>
+<div id="root"></div>
 
-    <script type="text/babel">
-        const { Component } = React;
+<!-- scripts -->
+<script type="text/babel">
+ const root = document.getElementById("root");
+ const {Component} = React;
+ const { log } = console;
+ //-----------------------//
+ //    React Component    //
+ //-----------------------//
+ function Preloader(props){
+  return(
+   <div className="preloader">
+    <svg>
+    <circle cx="30" cy="30" r="30">
+    </circle>
+    </svg>
+   </div>
+  )
+ }
+ <br/>
+ class InputForm extends Component{
+  render(){
+   const { data } = this.props;
+   const { handleChange } = this.props;
+   return(
+    <section className="container mw-1000 ">
+    <div className="title center top-title">
+    <h1>INVOICING</h1>
+    <p>sales invoice Or bill generator web application</p>
+    </div>
+    <form onSubmit={this.props.handleSubmit}>
+    <div className="form-group" >
+    <label>Buyer's Name*</label>
+    <input 
+    type="text" 
+    name="buyer" 
+    value={data.buyer}
+    onChange={handleChange}
+    />
+    </div>
+    <div className="form-group">
+    <label>Buyer address</label>
+    <textarea 
+    name="address" 
+    value={data.address}
+    onChange={handleChange}
+    >
+    </textarea>
+    </div>
+    <div className="form-group">
+    <label>Select State*</label>
+    <select 
+    value={data.state}
+    name="state"
+    onChange={handleChange}>
+    <option value="">select state</option>
+    <option value="local" >Local State</option>
+    <option value="inter" >Inter State</option> 
+    </select> 
+    </div>
+    <div className="form-group" >
+    <label>Product*</label>
+    <input 
+    type="text" 
+    name="product" 
+    value={data.product}
+    onChange={handleChange}
+    />
+    </div>
+    <div className="form-group" >
+    <label>HSN/SAC Code</label>
+    <input 
+    type="text" 
+    name="hsn" 
+    value={data.hsn}
+    onChange={handleChange}
+    />
+    </div>
+ <div className="form-group" >
+    <label>Color</label>
+    <input 
+    type="text" 
+    name="hsn" 
+    value={data.color}
+    onChange={handleChange}
+    />
+    </div>
 
-        function Preloader() {
-            return (
-                <div className="preloader">
-                    <svg>
-                        <circle cx="30" cy="30" r="30"></circle>
-                    </svg>
-                </div>
-            );
-        }
+    <div className="form-group" >
+    <label>Product Rate*</label>
+    <input 
+    type="Number" 
+    name="productRate" 
+    value={data.productRate}
+    onChange={handleChange}
+    />
+    </div>
+    <div className="form-group" >
+    <label>Quality*</label>
+    <input 
+    type="number" 
+    name="quality" 
+    value={data.quality}
+    onChange={handleChange}
+    />
+    </div>
+    <div className="form-group" >
+    <label>payment type</label>
+    <select 
+    name="payType" 
+    value={data.payType}
+    onChange={handleChange}>
+    <option value="Cash" >Cash</option>
+    <option value="Bank" >Bank</option> 
+    <option value="Credit" >Credit</option>
+    </select>
+    </div>
+    <div className="form-group" >
+    <label>Tex Type</label>
+    <select
+     name="texType"
+     value={data.texType}
+     onChange={handleChange}>
+    <option value="" >Nill</option>
+    <option value="1" >GST</option> 
+    <option value="2" disabled>vat</option>
+    </select>
+    </div>
+    <div className="form-group" >
+    <label>15 Character, GST No </label>
+    <input 
+    type="text" 
+    name="gstno" 
+    value={data.gstno}
+    onChange={handleChange}
+    />
+    </div>
+    <div className="form-group" >
+    <label>GST Rate </label>
+    <select 
+     name="gstRate" 
+     value={data.gstRate}
+     onChange={handleChange}>
+    <option value="" >0%</option>
+    <option value="5">5%</option>
+    <option value="8">8%</option>
+    <option value="12" >12%</option>
+    <option value="18" >18%</option>
+    </select>
+    </div>
+    <div className="form-group" >
+    <span className="error">{data.error}</span>
+    <button type="submit" className="btn" >Generator</button>
+    </div>
+    </form>
+    {data.showLoader ? <Preloader/> : null }
+    </section>
+   );
+  }
+ }
+ <br/>
+ 
+ class Invoice extends Component{
+  printScreen(){
+   window.print();
+   alert("print btn working is web browser")
+  }
+  render(){
+   const { data } = this.props;
+   const invoiceNo = Math.floor(Math.random() * 100);
+   
+   let date = new Date();
+   let day = date.getDate();
+   let month = date.getMonth() +1;
+   let yr = date.getFullYear();
+   let today = day+'/'+month+'/'+yr;
+   
+   
+   const rate = +data.productRate;
+   const quality = +data.quality;
+   const total = rate * quality;
+   const gstRate = +data.gstRate;
+   
+   let sGst = null;
+   let cGst = null;
+   let iGst = null;
+   let hSgst = null;
+   let hCgst = null;
+   let hIgst = null;
+   let grendTotal = total;
+   
+  if(data.gstRate.length){
+   if(data.state === 'local'){
+    let haf = gstRate / 2;
+     hSgst = haf+'%';
+     hCgst = haf+'%';
+    sGst = total * haf /100;
+    cGst = total * haf /100;
+   }else if(data.state === 'inter'){
+    hIgst = gstRate+'%';
+    iGst = total * gstRate / 100;
+   }
+   grendTotal = total + sGst + cGst + iGst;
+  }
+   return(
+    <section className="container ">
+    <div className="title center">
+    <h1>Shri Ram Watch Mobile Center</h1>
+    <p>Main Road Rajdhanwar  </p>
+    <p>Contact us : +919798301743</p>
+    </div>
+    <span className="info" >Desktop screen Ui</span>
+    <div className="row">
+    <div className="w100 center p8">
+    <h3>SALE INVOICE</h3>
+    </div>
+    <div className="w50 p5" >
+    <h3>Shri Ram Watch Mobile Center</h3>
+    <p>Sales&Services</p>
+    <p>Rajdhanwar</p>
+    <p>Jharkhand, India</p>
+    </div>
+    <div className="w50">
+    <div className="row nb">
+    <div className="w50 bl p5" >
+    
+    </div>
+    <div className="w50 p5" >
+    <p>Date:20th December 2024 </p>
+    </div>
+    <div className="w50 bl p5" >
+    <p>Delivery Note </p>
+    </div>
+    <div className="w50 p5" >
+    <p>Payment type : <span>{data.payType}</span></p>
+    </div>
+    <div className="w50 bl p5 bbn" >
+    <p> Supplier's Ref. </p>
+    </div>
+    <div className="w50 p5 bbn" >
+    <p>Other Reference.</p>
+    </div>
+    </div>
+    </div>
+    <div className="w50 p5" >
+    <p><b>Buyer</b></p>
+    <h3>{data.buyer}</h3>
+    <p>{data.address}</p>
+    <p>India</p>
+    <p>Place Of Supply : {data.state} State</p>
+    </div>
+    <div className="w50">
+    <div className="row nb">
+    <div className="w50 bl p5" >
+    <p>Buyer's Order No </p>
+    <h4>SRW12315</h4>
+    </div>
+    
 
-        class InputForm extends Component {
-            constructor(props) {
-                super(props);
-                this.state = {
-                    buyer: '',
-                    address: '',
-                    state: '',
-                    product: '',
-                    hsn: '',
-                    productRate: '',
-                    quality: '',
-                    payType: 'Cash',
-                    texType: '',
-                    gstno: '',
-                    gstRate: '',
-                    invoiceDate: new Date().toISOString().split('T')[0], // Default to today
-                    error: '',
-                    showLoader: false,
-                    invoiceGenerated: false
-                };
-            }
 
-            handleChange = (event) => {
-                this.setState({ [event.target.name]: event.target.value });
-            }
+    </div>
+    </div>
+    </div>
+    <div className="row">
+    <div className="w30 p5" >
+    Description
+    </div>
+    <div className="w8 p5">
+    HSN/SAC
+    </div>
+    <div className="w8 p5" >
+    Quality
+    </div>
+    <div className="w6 p5" >
+    Unit
+    </div>
+    <div className="w8 p5" >
+    Rate
+    </div>
+    <div className="w8 p5">
+    value
+    </div>
+    <div className="w8 p5">
+    GST%
+    </div>
+    
+    </div>
+    <div className="row h100">
+    <div className="w30 p5" >
+     {data.product}
+    </div>
+    <div className="w8 p5">
+     {data.hsn}
+    </div>
+    <div className="w8 p5" >
+     {data.quality}
+    </div>
+    <div className="w6 p5" >
+     pc
+    </div>
+    <div className="w8 p5" >
+     {data.productRate}
+    </div>
+    <div className="w8 p5">
+     {total}
+    </div>
+    <div className="w8 p5">
+     {data.gstRate !== '' ? data.gstRate +'%' : ''} 
+    </div>
+    <div className="w8 p5">
+     {sGst}
+    </div>
+    <div className="w8 p5">
+     {cGst}
+    </div>
+    <div className="w8 p5">
+     {iGst}
+    </div>
+    </div>
+    <div className="row ">
+    <div className="w30 p5" >
+    
+    </div>
+    <div className="w8 p5">
+    
+    </div>
+    <div className="w8 p5" >
+    </div>
+    <div className="w6 p5" >
+    </div>
+    <div className="w8 p5" >
+    </div>
+    <div className="w8 p5">
+    {total}
+    </div>
+    <div className="w8 p5">
+    </div>
+    <div className="w8 p5">
+     {sGst}
+    </div>
+    <div className="w8 p5">
+     {cGst}
+    </div>
+    <div className="w8 p5">
+     {iGst}
+    </div>
+    </div>
+    <div className="row" >
+    <div className="w50 p5">
+    <h3>Description</h3>
+    <p>"Timepieces and smartphones, all in one place. Shop now!" VIVO REDMI SAMSUNG etc 
+    </p>
+    <h3 className="m5" >Teams of services</h3>
+    <p>"Accepted payments. Returns within timeframe. Warranty included. Shipping available. Privacy respected. Contact for help. Terms may change. Legal disclaimer." 
+    </p>
+    </div>
+    <div className="w50">
+    <div className="row nb" >
+    <div className="w50 p5 bl" >
+    <p><b> total amount </b></p>
+    </div>
+    <div className="w20 p5 bl">
+    <p></p>
+    </div>
+    <div className="w30 p5" >
+    <p>{total}</p>
+    </div>
+    </div>
+    <div className="row nb" >
+    <div className="w50 p5 bl" >
+    <p> <b>ADD : STATE TEX</b></p>
+    </div>
+    <div className="w20 p5 bl">
+    <p>{hSgst}</p>
+    </div>
+    <div className="w30 p5" >
+    <p>{sGst}</p>
+    </div>
+    </div>
+    
 
-            handleSubmit = (event) => {
-                event.preventDefault();
-                this.setState({ showLoader: true });
-                setTimeout(() => {
-                    this.setState({ showLoader: false, invoiceGenerated: true });
-                }, 2000);
-            }
 
-            render() {
-                return (
-                    <section className="container mw-1000 ">
-                        <div className="title center top-title">
-                            <h1>INVOICING</h1>
-                            <p>Sales invoice or bill generator web application</p>
-                        </div>
-                        <form onSubmit={this.handleSubmit}>
-                            <div className="form-group">
-                                <label>Buyer's Name*</label>
-                                <input type="text" name="buyer" value={this.state.buyer} onChange={this.handleChange} />
-                            </div>
-                            <div className="form-group">
-                                <label>Buyer Address</label>
-                                <textarea name="address" value={this.state.address} onChange={this.handleChange}></textarea>
-                            </div>
-                            <div className="form-group">
-                                <label>Select State*</label>
-                                <select value={this.state.state} name="state" onChange={this.handleChange}>
-                                    <option value="">Select state</option>
-                                    <option value="local">Local State</option>
-                                    <option value="inter">Inter State</option>
-                                </select>
-                            </div>
-                            <div className="form-group">
-                                <label>Product*</label>
-                                <input type="text" name="product" value={this.state.product} onChange={this.handleChange} />
-                            </div>
-                            <div className="form-group">
-                                <label>HSN/SAC Code</label>
-                                <input type="text" name="hsn" value={this.state.hsn} onChange={this.handleChange} />
-                            </div>
-                            <div className="form-group">
-                                <label>Product Rate*</label>
-                                <input type="number" name="productRate" value={this.state.productRate} onChange={this.handleChange} />
-                            </div>
-                            <div className="form-group">
-                                <label>Quality*</label>
-                                <input type="number" name="quality" value={this.state.quality} onChange={this.handleChange} />
-                            </div>
-                            <div className="form-group">
-                                <label>Payment Type</label>
-                                <select name="payType" value={this.state.payType} onChange={this.handleChange}>
-                                    <option value="Cash">Cash</option>
-                                    <option value="Bank">Bank</option>
-                                    <option value="Credit">Credit</option>
-                                </select>
-                            </div>
-                            <div className="form-group">
-                                <label>Tex Type</label>
-                                <select name="texType" value={this.state.texType} onChange={this.handleChange}>
-                                    <option value="">Nil</option>
-                                    <option value="1">GST</option>
-                                    <option value="2" disabled>VAT</option>
-                                </select>
-                            </div>
-                            <div className="form-group">
-                                <label>15 Character, GST No</label>
-                                <input type="text" name="gstno" value={this.state.gstno} onChange={this.handleChange} />
-                            </div>
-                            <div className="form-group">
-                                <label>GST Rate</label>
-                                <select name="gstRate" value={this.state.gstRate} onChange={this.handleChange}>
-                                    <option value="">0%</option>
-                                    <option value="5">5%</option>
-                                    <option value="8">8%</option>
-                                    <option value="12">12%</option>
-                                    <option value="18">18%</option>
-                                </select>
-                            </div>
-                            <div className="form-group">
-                                <label>Invoice Date</label>
-                                <input type="date" name="invoiceDate" value={this.state.invoiceDate} onChange={this.handleChange} />
-                            </div>
-                            <div className="form-group">
-                                <label>Order Date</label>
-                                <input type="date" name="orderDate" value={this.state.invoiceDate} readOnly />
-                            </div>
-                            <div className="form-group">
-                                <span className="error">{this.state.error}</span>
-                                <button type="submit" className="btn">Generate</button>
-                            </div>
-                        </form>
-                        {this.state.showLoader ? <Preloader /> : null}
-                        {this.state.invoiceGenerated && <Invoice data={this.state} />}
-                    </section>
-                );
-            }
-        }
+    
+    <div className="row nb">
+    <div className="w50 p5 bl bbn" >
+    <p><b>Total</b></p>
+    </div>
+    <div className="w20 p5 bbn" >
+    <p></p>
+    </div>
+    <div className="w30 p5 bbn" >
+    <p><b>{grendTotal}</b></p>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div className="row f14" >
+    <div className="w50 p8" >
+    
+    <p>Our Mobile No: 9798301743</p>
+    </div>
+    <div className="w50 p8 right" >
+    <p>Authorise Signature</p>
+    <p className="sin" >pintu kumar modi</p>
+    </div>
+    </div>
+    <button className="btn my" onClick={this.props.handleEdit}>Edit</button>
+    <button className="btn my" onClick={this.props.backToHome} >Home</button>
+    <button className="print" onClick={() => this.printScreen()}>Print</button> 
+    </section>
+   );
+  }
+ }
+ <br/>
+ class App extends Component{
+  constructor(){
+   super();
+   const initialState = {
+    buyer:'',
+    address:'',
+    state:'',
+    product:'',
+    hsn:'',
+    productRate:'',
+    quality:'',
+    payType:'',
+    texType:'',
+    gstno:'',
+    gstRate:'',
+    error:'',
+    showBill:false,
+    notEdited:true,
+    showLoader:false
+   }
+   this.state = initialState;
+   
+   this.handleSubmit = this.handleSubmit.bind(this);
+   this.handleChange = this.handleChange.bind(this);
+   this.backToHome = this.backToHome.bind(this);
+   this.handleEdit = this.handleEdit.bind(this);
+  }
+  handleSubmit(e){
+   e.preventDefault();
+   const { buyer, address, state , product, hsn, productRate, quality, payType, texType, gstno , gstRate, error } = this.state;
+   let errors = '';
 
-        class Invoice extends Component {
-            render() {
-                const { buyer, address, product, productRate, quality, payType, gstRate, invoiceDate, state } = this.props.data;
-                const invoiceNo = `SRI${Math.floor(Math.random() * 10000)}`; // Invoice no starts with "SRI" and random number
+    this.setState({
+    error:''
+    }) 
+    
+   if(buyer === ''){
+    errors = "buyer name is required";
+   }else if(state === ''){
+   errors = "select state";
+   }else if(product === ''){
+    errors ="product name is required";
+   }else if(productRate === ''){
+    errors ="product Rate is required";
+   }else if(quality === ''){
+    errors ="product quality is required";
+   }else if(texType !== ''){
+    if(gstno === ''){
+    errors ="enter GST Number";
+    }else if(gstno.length < 15){
+     errors ="invalid GST number";
+    }else if(gstRate === ''){
+     errors ="select GST rate";
+    }
+   }else if(gstRate !== ''){
+    if(texType === ''){
+    errors ="select text type";
+    }
+   }
+   if(errors.length){
+    this.setState({
+    error:errors
+    });
+    return;
+   }
+   
+   this.setState({
+    showLoader:true
+   })
+   setTimeout(function(){
+    this.setState({
+    showBill:true,
+    notEdited:true,
+    showLoader:false
+    })
+   }.bind(this),2000)
+  } 
+  handleChange(e){
+   const { name , value } = e.target;
+   this.setState({
+   [name]:value
+   });
+  }
+  backToHome(){
+   this.setState({
+    buyer:'',
+    address:'',
+    state:'',
+    product:'',
+    hsn:'',
+    productRate:'',
+    quality:'',
+    payType:'',
+    texType:'',
+    gstno:'',
+    gstRate:'',
+    error:'',
+    showBill:false,
+    notEdited:true,
+    showLoader:false
 
-                const date = new Date(invoiceDate);
-                const formattedDate = date.toLocaleDateString();
-
-                const rate = +productRate;
-                const qty = +quality;
-                const total = rate * qty;
-                const gst = gstRate ? (total * (+gstRate / 100)) : 0;
-                const grandTotal = total + gst;
-
-                return (
-                    <div className="invoice">
-                        <h2>Invoice</h2>
-                        <p><strong>Invoice No:</strong> {invoiceNo}</p>
-                        <p><strong>Date:</strong> {formattedDate}</p>
-                        <h3>Buyer Details</h3>
-                        <p><strong>Name:</strong> {buyer}</p>
-                        <p><strong>Address:</strong> {address}</p>
-                        <h3>Product Details</h3>
-                        <p><strong>Product:</strong> {product}</p>
-                        <p><strong>Rate:</strong> {rate}</p>
-                        <p><strong>Quality:</strong> {qty}</p>
-                        <p><strong>Total:</strong> {total}</p>
-                        <p><strong>GST Rate:</strong> {gstRate}%</p>
-                        <p><strong>GST Amount:</strong> {gst}</p>
-                        <h3>Grand Total: {grandTotal}</h3>
-                    </div>
-                );
-            }
-        }
-
-        ReactDOM.render(<InputForm />, document.getElementById("root"));
-    </script>
+   });
+  }
+  handleEdit(){
+   this.setState({
+    notEdited:false
+   })
+  }
+ 
+  render(){
+   return(
+    <div className="app">
+     {this.state.showBill && this.state.notEdited ? 
+     (
+      <Invoice
+       backToHome={this.backToHome}
+       handleEdit={this.handleEdit}
+       data={this.state}
+      />
+     ):(
+      <InputForm
+       handleChange={this.handleChange}
+       handleSubmit={this.handleSubmit}
+       data={this.state}
+      />
+     )}  
+    </div>
+   );
+  }
+ }
+ ReactDOM.render(<App/>,root);
+</script>
 </body>
 </html>
